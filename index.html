@@ -8,15 +8,60 @@
         body {
             margin: 0;
         }
+
+        .collapsible {
+            background-color: black;
+            color: white;
+            cursor:crosshair;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            
+
+        }
+     
+        .statement {
+            padding: 0 50px;
+            display: none;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+        }
     </style>
+
     <script type ="module" src ="./planets.js"></script>
  
     <title>Project 3</title>
 
 </head>
 <body>
-    
-   
+    <button type="button" class="collapsible">Artist Statement</button>
+    <div class="statement">
+        <p>I attempted to create a solar system with this project. My vision was definitely more ambitious than how this turned out, and there are a lot of things I would like to improve on here. 
+            I used the GLTFloader and FlyControls add-ons for this project. The loader allowed me to put the planets in, which I had created through Blender. 
+            The FlyControls add-on will enable you to move around like you're in a spaceship while navigating this setting, which I think suits this environment. 
+            This world is quite sci-fi/"Mass Effect"-inspired. It was an attempt to create a world where space appeared inhabitable, and other planets were almost like continents that could be easily traveled to. In the future, I would like to add more planets and work on texture-painting them to suit my ideas.
+        </p>
+    </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var statement = this.nextElementSibling;
+            if (statement.style.display === "block") {
+              statement.style.display = "none";
+            } else {
+              statement.style.display = "block";
+            }
+          });
+        }
+    </script>
 
 </body>
 </html>
