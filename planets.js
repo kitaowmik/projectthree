@@ -20,7 +20,7 @@ scene.add(stars);
 const starPos = [];
 for (let i = 0; i < 10000; i++) {
     const x = (Math.random() - 0.5) * 5000;
-    const y = (Math.random() - 0.5) * 2000;
+    const y = (Math.random() - 0.5) * 3000;
     const z = -(Math.random() - 0.5) * 2000
     starPos.push(x,y,z);
 }
@@ -108,11 +108,12 @@ const light = new THREE.DirectionalLight( 0xFFFFFF, 3.5);
 light.position.set( 200, 20, 10);
 scene.add(light);
 
-
+//from threejs ex
 pointLight = new THREE.PointLight( 0xffffff, 1 );
 scene.add( pointLight );
 
 pointLight.add( new THREE.Mesh( new THREE.SphereGeometry( 2, 8, 8 ), new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
+
 
 const ambientLight = new THREE.AmbientLight(0xD66868, 0.5);
 scene.add(ambientLight);
@@ -127,12 +128,12 @@ function animate() {
     planetTwo.rotation.y += 0.02;
     planetThree.rotation.y += 0.02;
 
-    planetTwo.position.x = 5.5 * Math.cos(t) + 0;
-    planetTwo.position.y = 2 * Math.cos(t) + 0;
-    planetTwo.position.z = 5 * Math.sin(t) + 0;
+    planetTwo.position.x = 8.5 * Math.cos(t) + 0;
+    planetTwo.position.y = 3 * Math.cos(t) + 0;
+    planetTwo.position.z = 2 * Math.sin(t) + 0;
 
     planetThree.position.x = -2 * Math.cos(t + 0.005) + 0;
-    planetThree.position.y = 0.5 * Math.cos(t + 0.005) + 0;
+    planetThree.position.y = 1.5 * Math.cos(t + 0.005) + 0;
     planetThree.position.z = 4 * Math.sin(t + 0.005) + 0;
     
     pointLight.position.x = Math.sin( timer * 7 ) * 300;
